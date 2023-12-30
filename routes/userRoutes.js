@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { getUsers,addUser } from "../controllers/userController.js";
 const route = Router();
 
 /**
@@ -9,18 +10,7 @@ const route = Router();
  * POST GET, PUT, PATCH,DELETE, CONNECT,OPTIONS
  */
 
-route.get('/users/get',(req,res) => {
+route.get('/users/get',getUsers);
 
-
-    res.status(200).json({
-
-          data:"success"
-    })
-
-});
-
-route.post('/users/adduser',(req,res) => {
-
-
-});
+route.post('/users/adduser',addUser);
 export default route;
